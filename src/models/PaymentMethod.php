@@ -8,4 +8,8 @@ class PaymentMethod extends APIModel
 {
     protected $table = 'payment_methods';
     protected $fillable = ['account_id', 'payload', 'payload_value', 'status'];
+
+    public function getAccountIdAttribute($value){
+      return intval($value);
+    }
 }

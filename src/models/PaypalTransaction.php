@@ -8,4 +8,8 @@ class PaypalTransaction extends APIModel
 {
     protected $table = 'paypal_transactions';
     protected $fillable = ['account_id', 'paypal', 'cart', 'email', 'first_name', 'last_name', 'middle_name', 'payer', 'total', 'currency'];
+
+    public function getAccountIdAttribute($value){
+      return intval($value);
+    }
 }
