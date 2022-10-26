@@ -98,4 +98,11 @@ class PaymentMethodController extends APIController
       }
       return (sizeof($result) > 0) ? $result[0] : null;
     }
+
+	public function retrievePaymentMethod(Request $request){
+		$data = $request->all();
+		$this->model = new PaymentMethod();
+		$this->retrieveDB($data);
+		return $this->response();
+	}
 }

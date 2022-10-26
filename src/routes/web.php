@@ -6,6 +6,7 @@ Route::group(['middleware' =>  env('PLATFORM') === 'PAYHIRAM' ? ['general_valida
     $controller = 'Increment\Payment\Http\PaymentMethodController@';
     Route::post($route.'create', $controller."create");
     Route::post($route.'retrieve', $controller."retrieve");
+    Route::post($route.'retrieve_payment_methods', $controller."retrievePaymentMethod");
     Route::post($route.'update', $controller."update");
     Route::post($route.'delete', $controller."delete");
     Route::get($route.'test', $controller."test");
